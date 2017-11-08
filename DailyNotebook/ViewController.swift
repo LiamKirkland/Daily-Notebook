@@ -13,6 +13,17 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     var eventNames: Array = ["Example Event"]
     var eventTimes: Array = ["ll"]
     
+    @IBAction func createAssignment(_ sender: Any) {
+        
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let newAssignment = Assignment(title: "Hello", notes: "blahblahblah", Date: "Now")
+        
+    }
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return eventNames.count
@@ -32,11 +43,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     }
     
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        let newAssignment = Assignment(title: "Hello", notes: "blahblahblah", Date: "Now")
-        
-    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
