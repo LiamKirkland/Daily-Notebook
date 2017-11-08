@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     var eventNames: Array = ["Example Event"]
-    var eventTimes: Array = [""]
+    var eventTimes: Array = ["ll"]
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -34,7 +34,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        let newAssignment = Assignment(title: "Hello", notes: "blahblahblah", Date: "Now")
         
     }
 
@@ -45,5 +45,11 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     }
 
 
+}
+
+struct Assignment {
+    var title: String
+    var notes: String
+    var Date: String
 }
 
