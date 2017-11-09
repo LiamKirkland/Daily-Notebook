@@ -37,7 +37,7 @@ class createAssignment: UIViewController {
             eventNotes.append(eventNote.text!)
             eventTimes.append(formatter.string(from: currentDateTime))
             
-            let alert = UIAlertController(title: "Event Created", message: "Add another or tap 'back'.", preferredStyle: UIAlertControllerStyle.alert)
+            let alert = UIAlertController(title: "Event Created", message: "Add another or tap Back.", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Confirm", style: UIAlertActionStyle.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }

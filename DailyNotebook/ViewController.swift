@@ -14,13 +14,15 @@ var eventNotes: Array = ["These are your notes."]
 
 class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
-    @IBAction func createAssignment(_ sender: Any) {
-        
-    }
+    @IBOutlet weak var eventLog: UITableView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let newAssignment = Assignment(title: "Hello", notes: "blahblahblah", Date: "Now")
+        
+        eventLog.delegate = self
+        eventLog.dataSource = self
         
     }
     
@@ -43,16 +45,17 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         return myCell!
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete{
+            print(indexPath.row)
+            eventNames.remove(at: indexPath.row)
+            eventTimes.remove(at: indexPath.row)
+            eventNotes.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
 
-    
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        
-        
     }
-
-
 }
 
 struct Assignment {

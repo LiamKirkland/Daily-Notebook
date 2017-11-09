@@ -55,11 +55,13 @@
                     <navigationItem key="navigationItem" id="xxS-wF-s8j">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="cPm-Eq-DJv">
                             <connections>
-                                <action selector="createAssignment:" destination="BYZ-38-t0r" id="ss7-Mw-8QH"/>
                                 <segue destination="7ZG-mq-xAd" kind="show" id="MGZ-Cn-ofI"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="eventLog" destination="iFi-lV-M1d" id="aFp-G2-Ncj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
