@@ -119,7 +119,7 @@
             </objects>
             <point key="canvasLocation" x="1837.5999999999999" y="-56.221889055472268"/>
         </scene>
-        <!--View Controller-->
+        <!--Title-->
         <scene sceneID="X18-gx-V73">
             <objects>
                 <viewController id="Qw4-WW-3PE" sceneMemberID="viewController">
@@ -148,6 +148,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NZj-b3-Wq4"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="zIV-bt-Bue">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="sNa-wf-esA"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5K-Ku-UGc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
