@@ -8,10 +8,11 @@
 
 import UIKit
 
+var eventNames: Array = ["Example Event"]
+var eventTimes: Array = ["Jan 1, 2017 at 12:00 AM"]
+var eventNotes: Array = ["These are your notes."]
+
 class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
-    
-    var eventNames: Array = ["Example Event"]
-    var eventTimes: Array = ["ll"]
     
     @IBAction func createAssignment(_ sender: Any) {
         

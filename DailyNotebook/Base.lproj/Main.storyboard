@@ -92,11 +92,19 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Create Assignment"/>
+                                <connections>
+                                    <action selector="createAssignment:" destination="7ZG-mq-xAd" eventType="touchUpInside" id="jeJ-bE-pEu"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="ZoP-OX-Lgq"/>
                     </view>
+                    <connections>
+                        <outlet property="createAssignment" destination="q3S-WU-CUu" id="ivU-dE-O0r"/>
+                        <outlet property="eventNote" destination="uAk-GR-S1S" id="4gs-tl-wuM"/>
+                        <outlet property="eventTitle" destination="Yzl-Ax-fVX" id="0rM-w8-JLo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3M4-Lc-F8L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
