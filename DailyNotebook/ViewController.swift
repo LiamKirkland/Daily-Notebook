@@ -12,6 +12,26 @@ var eventNames: Array = ["Example Event"]
 var eventTimes: Array = ["Jan 1, 2017 at 12:00 AM"]
 var eventNotes: Array = ["These are your notes."]
 
+var selectedCell: Int = 0
+
+extension UIResponder {
+    
+    func next<T: UIResponder>(_ type: T.Type) -> T? {
+        return next as? T ?? next?.next(type)
+    }
+}
+
+extension UITableViewCell {
+    
+    var tableView: UITableView? {
+        return next(UITableView.self)
+    }
+    
+    var indexPath: IndexPath? {
+        return tableView?.indexPath(for: self)
+    }
+}
+
 class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     @IBOutlet weak var eventLog: UITableView!
@@ -52,6 +72,14 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         return myCell!
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("section: \(indexPath.section)")
+        print("row: \(indexPath.row)")
+        
+        selectedCell = indexPath.row
+        //add code to NotesVC
+    }
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete{
             print(indexPath.row)
@@ -60,9 +88,9 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
             eventNotes.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
-
-
     }
+    
+    
 }
 
 struct Assignment {

@@ -11,7 +11,7 @@ import UIKit
 class createAssignment: UIViewController {
     
     @IBOutlet weak var eventTitle: UITextField!
-    @IBOutlet weak var eventNote: UITextField!
+    @IBOutlet weak var eventNote: UITextView!
     @IBOutlet weak var createAssignment: UIButton!
 
     override func viewDidLoad() {

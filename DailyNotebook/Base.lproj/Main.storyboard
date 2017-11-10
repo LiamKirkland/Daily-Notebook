@@ -89,15 +89,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Event Notes" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uAk-GR-S1S">
-                                <rect key="frame" x="95" y="231" width="184" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q3S-WU-CUu">
-                                <rect key="frame" x="105" y="353" width="164" height="34"/>
+                                <rect key="frame" x="105" y="416" width="164" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Create Assignment"/>
@@ -105,13 +98,20 @@
                                     <action selector="createAssignment:" destination="7ZG-mq-xAd" eventType="touchUpInside" id="jeJ-bE-pEu"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Add Event Notes Here" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="JGL-vV-C9g">
+                                <rect key="frame" x="49" y="225" width="277" height="155"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="ZoP-OX-Lgq"/>
                     </view>
                     <connections>
                         <outlet property="createAssignment" destination="q3S-WU-CUu" id="ivU-dE-O0r"/>
-                        <outlet property="eventNote" destination="uAk-GR-S1S" id="4gs-tl-wuM"/>
+                        <outlet property="eventNote" destination="JGL-vV-C9g" id="Yrg-b4-uhs"/>
                         <outlet property="eventTitle" destination="Yzl-Ax-fVX" id="0rM-w8-JLo"/>
                     </connections>
                 </viewController>
@@ -122,7 +122,7 @@
         <!--Title-->
         <scene sceneID="X18-gx-V73">
             <objects>
-                <viewController id="Qw4-WW-3PE" sceneMemberID="viewController">
+                <viewController id="Qw4-WW-3PE" customClass="NotesVC" customModule="DailyNotebook" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="889-H0-krf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -151,6 +151,9 @@
                     <navigationItem key="navigationItem" title="Title" id="zIV-bt-Bue">
                         <barButtonItem key="rightBarButtonItem" title="Save" id="sNa-wf-esA"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="notes" destination="wI6-Z1-bGO" id="igY-dc-WRy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5K-Ku-UGc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

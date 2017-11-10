@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		E88666CD1FB33DBE00EA9097 /* createAssignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88666CC1FB33DBE00EA9097 /* createAssignment.swift */; };
 		E88666CF1FB33F7700EA9097 /* assignmentCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88666CE1FB33F7700EA9097 /* assignmentCreate.swift */; };
+		E8ACDDD51FB48EB300A5FBD8 /* NotesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8ACDDD41FB48EB300A5FBD8 /* NotesVC.swift */; };
 		E8FEE51A1FB0937A0054BB87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FEE5191FB0937A0054BB87 /* AppDelegate.swift */; };
 		E8FEE51C1FB0937A0054BB87 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FEE51B1FB0937A0054BB87 /* ViewController.swift */; };
 		E8FEE51F1FB0937B0054BB87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8FEE51D1FB0937B0054BB87 /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 /* Begin PBXFileReference section */
 		E88666CC1FB33DBE00EA9097 /* createAssignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createAssignment.swift; sourceTree = "<group>"; };
 		E88666CE1FB33F7700EA9097 /* assignmentCreate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = assignmentCreate.swift; sourceTree = "<group>"; };
+		E8ACDDD41FB48EB300A5FBD8 /* NotesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesVC.swift; sourceTree = "<group>"; };
 		E8FEE5161FB0937A0054BB87 /* DailyNotebook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyNotebook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8FEE5191FB0937A0054BB87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8FEE51B1FB0937A0054BB87 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				E8FEE51B1FB0937A0054BB87 /* ViewController.swift */,
 				E88666CC1FB33DBE00EA9097 /* createAssignment.swift */,
 				E88666CE1FB33F7700EA9097 /* assignmentCreate.swift */,
+				E8ACDDD41FB48EB300A5FBD8 /* NotesVC.swift */,
 				E8FEE51D1FB0937B0054BB87 /* Main.storyboard */,
 				E8FEE5231FB0937B0054BB87 /* Assets.xcassets */,
 				E8FEE5251FB0937B0054BB87 /* LaunchScreen.storyboard */,
@@ -272,6 +275,7 @@
 				E8FEE5221FB0937B0054BB87 /* DailyNotebook.xcdatamodeld in Sources */,
 				E88666CD1FB33DBE00EA9097 /* createAssignment.swift in Sources */,
 				E88666CF1FB33F7700EA9097 /* assignmentCreate.swift in Sources */,
+				E8ACDDD51FB48EB300A5FBD8 /* NotesVC.swift in Sources */,
 				E8FEE51A1FB0937A0054BB87 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
