@@ -11,10 +11,12 @@ import UIKit
 class NotesVC: UIViewController {
     
     @IBOutlet weak var notes: UITextView!
-
+    @IBOutlet weak var customImage: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        customImage.image = imageArray[selectedCell]
         notes.text = eventNotes[selectedCell]
     }
 

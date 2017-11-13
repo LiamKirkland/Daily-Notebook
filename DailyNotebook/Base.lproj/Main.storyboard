@@ -90,7 +90,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q3S-WU-CUu">
-                                <rect key="frame" x="105" y="416" width="164" height="34"/>
+                                <rect key="frame" x="105" y="595" width="164" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Create Assignment"/>
@@ -105,14 +105,35 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LNw-bC-Gpd">
+                                <rect key="frame" x="197" y="538" width="87" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="From Library"/>
+                                <connections>
+                                    <action selector="loadImage:" destination="7ZG-mq-xAd" eventType="touchUpInside" id="Mai-Ex-K80"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wrS-Aw-oYe">
+                                <rect key="frame" x="97" y="538" width="76" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Take Photo"/>
+                                <connections>
+                                    <action selector="takeImage:" destination="7ZG-mq-xAd" eventType="touchUpInside" id="kQA-DQ-Rgs"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ORa-Cm-NXC">
+                                <rect key="frame" x="67" y="414" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.50926607130000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.9824945330619812" green="0.50816088914871216" blue="0.011913010850548744" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="ZoP-OX-Lgq"/>
                     </view>
                     <connections>
                         <outlet property="createAssignment" destination="q3S-WU-CUu" id="ivU-dE-O0r"/>
                         <outlet property="eventNote" destination="JGL-vV-C9g" id="Yrg-b4-uhs"/>
                         <outlet property="eventTitle" destination="Yzl-Ax-fVX" id="0rM-w8-JLo"/>
+                        <outlet property="imagePicker" destination="ORa-Cm-NXC" id="Iy4-dT-ZaO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3M4-Lc-F8L" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -122,42 +143,38 @@
         <!--Title-->
         <scene sceneID="X18-gx-V73">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W5K-Ku-UGc" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="Qw4-WW-3PE" customClass="NotesVC" customModule="DailyNotebook" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="889-H0-krf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2Ue-5O-aey">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wI6-Z1-bGO">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
-                                        <color key="backgroundColor" red="1" green="0.50926607130000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                </subviews>
-                            </stackView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="t7Q-00-yAe">
+                                <rect key="frame" x="0.0" y="64" width="375" height="386"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.9824945330619812" green="0.50816088914871216" blue="0.011913010850548744" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AoF-r4-pHV">
+                                <rect key="frame" x="0.0" y="458" width="375" height="209"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
-                        <constraints>
-                            <constraint firstItem="2Ue-5O-aey" firstAttribute="top" secondItem="NZj-b3-Wq4" secondAttribute="top" id="2Od-56-2tS"/>
-                            <constraint firstItem="NZj-b3-Wq4" firstAttribute="bottom" secondItem="2Ue-5O-aey" secondAttribute="bottom" id="7Ts-jp-rnA"/>
-                            <constraint firstItem="2Ue-5O-aey" firstAttribute="leading" secondItem="NZj-b3-Wq4" secondAttribute="leading" id="Y2B-ec-1dc"/>
-                            <constraint firstItem="NZj-b3-Wq4" firstAttribute="trailing" secondItem="2Ue-5O-aey" secondAttribute="trailing" id="irj-Jy-V3a"/>
-                        </constraints>
+                        <color key="backgroundColor" red="0.9824945330619812" green="0.50816088914871216" blue="0.011913010850548744" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="NZj-b3-Wq4"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="zIV-bt-Bue">
                         <barButtonItem key="rightBarButtonItem" title="Save" id="sNa-wf-esA"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="notes" destination="wI6-Z1-bGO" id="igY-dc-WRy"/>
+                        <outlet property="customImage" destination="AoF-r4-pHV" id="1Mu-ZZ-uOG"/>
+                        <outlet property="notes" destination="t7Q-00-yAe" id="Qbn-32-Rry"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="W5K-Ku-UGc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1838" y="616"/>
+            <point key="canvasLocation" x="1837.5999999999999" y="615.74212893553226"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="P6X-9z-Tdd">

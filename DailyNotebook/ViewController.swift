@@ -8,9 +8,12 @@
 
 import UIKit
 
+var image = #imageLiteral(resourceName: "blank")
+
 var eventNames: Array = ["Example Event"]
 var eventTimes: Array = ["Jan 1, 2017 at 12:00 AM"]
 var eventNotes: Array = ["These are your notes."]
+var imageArray: Array = [image]
 
 var selectedCell: Int = 0
 
@@ -32,7 +35,7 @@ extension UITableViewCell {
     }
 }
 
-class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UIImagePickerControllerDelegate {
     
     @IBOutlet weak var eventLog: UITableView!
     

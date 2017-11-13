@@ -8,18 +8,51 @@
 
 import UIKit
 
-class createAssignment: UIViewController {
+class createAssignment: UIViewController,UINavigationControllerDelegate,UIImagePickerControllerDelegate {
     
     @IBOutlet weak var eventTitle: UITextField!
     @IBOutlet weak var eventNote: UITextView!
     @IBOutlet weak var createAssignment: UIButton!
-
+    @IBOutlet weak var imagePicker: UIImageView!
+    
+    let imagePick = UIImagePickerController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        imagePick.delegate = self
     }
     
+    @IBAction func loadImage(_ sender: UIButton) {
+        
+        imagePick.allowsEditing = false
+        imagePick.sourceType = .photoLibrary
+        
+        present(imagePick, animated: true, completion: nil)
+    }
+    @IBAction func takeImage(_ sender: UIButton) {
+        
+        imagePick.allowsEditing = false
+        imagePick.sourceType = .camera
+        
+        present(imagePick, animated: true, completion: nil)
+    }
+    
+    private func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            imagePicker.contentMode = .scaleAspectFit
+            imagePicker.image = pickedImage
+            //imageArray.append(pickedImage)
+        }
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
+//    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+//        dismiss(animated: true, completion: nil)
+//    }
+    
+    //work on image selector
     @IBAction func createAssignment(_ sender: Any) {
         if(eventTitle.text == "" || eventNote.text == ""){
             let alert = UIAlertController(title: "Empty Field(s)", message: "Please make sure the event title and notes are filled out.", preferredStyle: UIAlertControllerStyle.alert)
