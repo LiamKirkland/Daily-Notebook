@@ -39,10 +39,11 @@ class createAssignment: UIViewController,UINavigationControllerDelegate,UIImageP
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        print(info)
+        
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             imagePicker.contentMode = .scaleAspectFit
             imagePicker.image = pickedImage
+            imageArray.append(pickedImage)
         }
         
         dismiss(animated: true, completion: nil)
