@@ -19,7 +19,7 @@ class NotesVC: UIViewController {
         customImage.image = imageArray[selectedCell]
         notes.text = eventNotes[selectedCell]
     }
-
+    //make save button actually save.
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
