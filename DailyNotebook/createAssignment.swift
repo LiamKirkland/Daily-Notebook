@@ -76,6 +76,10 @@ class createAssignment: UIViewController,UINavigationControllerDelegate,UIImageP
             let alert = UIAlertController(title: "Event Created", message: "Add another or tap Back.", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Confirm", style: UIAlertActionStyle.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
+            
+            eventTitle.text = ""
+            eventNote.text = ""
+            imagePicker.image = nil
         }
         
         
