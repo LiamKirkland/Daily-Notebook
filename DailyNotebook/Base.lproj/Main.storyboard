@@ -82,43 +82,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Event Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yzl-Ax-fVX">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Event Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yzl-Ax-fVX">
                                 <rect key="frame" x="101" y="152" width="172" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Add Event Notes Here" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="JGL-vV-C9g">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Add Event Notes Here" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="JGL-vV-C9g">
                                 <rect key="frame" x="49" y="225" width="277" height="155"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LNw-bC-Gpd">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LNw-bC-Gpd">
                                 <rect key="frame" x="204" y="538" width="87" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="From Library"/>
                                 <connections>
                                     <action selector="loadImage:" destination="7ZG-mq-xAd" eventType="touchUpInside" id="Mai-Ex-K80"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wrS-Aw-oYe">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wrS-Aw-oYe">
                                 <rect key="frame" x="92" y="538" width="76" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Take Photo"/>
                                 <connections>
                                     <action selector="takeImage:" destination="7ZG-mq-xAd" eventType="touchUpInside" id="kQA-DQ-Rgs"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ORa-Cm-NXC">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ORa-Cm-NXC">
                                 <rect key="frame" x="67" y="414" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q3S-WU-CUu">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q3S-WU-CUu">
                                 <rect key="frame" x="105" y="599" width="164" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Create Assignment"/>
                                 <connections>
@@ -127,6 +121,28 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.9824945330619812" green="0.50816088914871216" blue="0.011913010850548744" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wrS-Aw-oYe" firstAttribute="top" secondItem="JGL-vV-C9g" secondAttribute="bottom" constant="158" id="4dh-3F-J0L"/>
+                            <constraint firstItem="JGL-vV-C9g" firstAttribute="leading" secondItem="ZoP-OX-Lgq" secondAttribute="leading" constant="49" id="BMo-VW-CpP"/>
+                            <constraint firstItem="LNw-bC-Gpd" firstAttribute="top" secondItem="JGL-vV-C9g" secondAttribute="bottom" constant="158" id="EqN-vp-SC2"/>
+                            <constraint firstItem="ZoP-OX-Lgq" firstAttribute="trailing" secondItem="ORa-Cm-NXC" secondAttribute="trailing" constant="68" id="Gyf-K2-Kqf"/>
+                            <constraint firstItem="q3S-WU-CUu" firstAttribute="top" secondItem="LNw-bC-Gpd" secondAttribute="bottom" constant="31" id="TNr-ZQ-9bF"/>
+                            <constraint firstItem="JGL-vV-C9g" firstAttribute="top" secondItem="Yzl-Ax-fVX" secondAttribute="bottom" constant="43" id="U9G-lH-sGR"/>
+                            <constraint firstItem="ZoP-OX-Lgq" firstAttribute="trailing" secondItem="JGL-vV-C9g" secondAttribute="trailing" constant="49" id="UGs-Eg-h4B"/>
+                            <constraint firstItem="wrS-Aw-oYe" firstAttribute="leading" secondItem="ZoP-OX-Lgq" secondAttribute="leading" constant="92" id="Xup-zK-dvq"/>
+                            <constraint firstItem="q3S-WU-CUu" firstAttribute="leading" secondItem="ZoP-OX-Lgq" secondAttribute="leading" constant="105" id="Ykh-ZH-m2B"/>
+                            <constraint firstItem="ZoP-OX-Lgq" firstAttribute="trailing" secondItem="LNw-bC-Gpd" secondAttribute="trailing" constant="84" id="Zz5-7C-Kf9"/>
+                            <constraint firstItem="ZoP-OX-Lgq" firstAttribute="bottom" secondItem="q3S-WU-CUu" secondAttribute="bottom" constant="34" id="cpr-XY-efD"/>
+                            <constraint firstItem="Yzl-Ax-fVX" firstAttribute="top" secondItem="ZoP-OX-Lgq" secondAttribute="top" constant="88" id="eTd-ZH-REH"/>
+                            <constraint firstItem="ZoP-OX-Lgq" firstAttribute="trailing" secondItem="q3S-WU-CUu" secondAttribute="trailing" constant="106" id="fDg-mK-YvT"/>
+                            <constraint firstItem="q3S-WU-CUu" firstAttribute="top" secondItem="ORa-Cm-NXC" secondAttribute="bottom" constant="57" id="g04-MG-9TL"/>
+                            <constraint firstItem="ZoP-OX-Lgq" firstAttribute="trailing" secondItem="Yzl-Ax-fVX" secondAttribute="trailing" constant="102" id="jMT-Pl-ZU4"/>
+                            <constraint firstItem="Yzl-Ax-fVX" firstAttribute="leading" secondItem="ZoP-OX-Lgq" secondAttribute="leading" constant="101" id="k7S-m5-pw1"/>
+                            <constraint firstItem="ORa-Cm-NXC" firstAttribute="leading" secondItem="ZoP-OX-Lgq" secondAttribute="leading" constant="67" id="kUI-zD-C7a"/>
+                            <constraint firstItem="ORa-Cm-NXC" firstAttribute="top" secondItem="JGL-vV-C9g" secondAttribute="bottom" constant="34" id="mML-OC-1Mn"/>
+                            <constraint firstItem="LNw-bC-Gpd" firstAttribute="leading" secondItem="wrS-Aw-oYe" secondAttribute="trailing" constant="36" id="oFZ-mh-1lf"/>
+                            <constraint firstItem="q3S-WU-CUu" firstAttribute="top" secondItem="wrS-Aw-oYe" secondAttribute="bottom" constant="31" id="ve6-gt-Wrt"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ZoP-OX-Lgq"/>
                     </view>
                     <connections>
