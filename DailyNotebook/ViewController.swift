@@ -8,7 +8,7 @@
 
 import UIKit
 
-var image = #imageLiteral(resourceName: "blank")
+var image = #imageLiteral(resourceName: "example")
 
 var eventNames: Array = ["Example Event"]
 var eventTimes: Array = ["Jan 1, 2017 at 12:00 AM"]

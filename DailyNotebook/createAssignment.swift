@@ -38,19 +38,21 @@ class createAssignment: UIViewController,UINavigationControllerDelegate,UIImageP
         present(imagePick, animated: true, completion: nil)
     }
     
-    private func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        print(info)
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             imagePicker.contentMode = .scaleAspectFit
             imagePicker.image = pickedImage
-            //imageArray.append(pickedImage)
         }
         
         dismiss(animated: true, completion: nil)
     }
     
-//    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-//        dismiss(animated: true, completion: nil)
-//    }
+
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+   
     
     //work on image selector
     @IBAction func createAssignment(_ sender: Any) {
