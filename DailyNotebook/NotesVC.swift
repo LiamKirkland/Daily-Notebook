@@ -20,11 +20,11 @@ class NotesVC: UIViewController {
         notes.text = eventNotes[selectedCell]
     }
     //make save button actually save.
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        
-        
+    
+    @IBAction func saveChanges(_ sender: Any) {
+        eventNotes[selectedCell] = notes.text
     }
+    
     
 
 }

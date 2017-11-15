@@ -72,6 +72,9 @@ class createAssignment: UIViewController,UINavigationControllerDelegate,UIImageP
             eventNames.append(eventTitle.text!)
             eventNotes.append(eventNote.text!)
             eventTimes.append(formatter.string(from: currentDateTime))
+            if imagePicker.image == nil {
+                imageArray.append(#imageLiteral(resourceName: "blank"))
+            }
             
             let alert = UIAlertController(title: "Event Created", message: "Add another or tap Back.", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Confirm", style: UIAlertActionStyle.default, handler: nil))

@@ -165,7 +165,11 @@
                         <viewLayoutGuide key="safeArea" id="NZj-b3-Wq4"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="zIV-bt-Bue">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="sNa-wf-esA"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="sNa-wf-esA">
+                            <connections>
+                                <action selector="saveChanges:" destination="Qw4-WW-3PE" id="Zph-o4-Wju"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="customImage" destination="AoF-r4-pHV" id="1Mu-ZZ-uOG"/>
