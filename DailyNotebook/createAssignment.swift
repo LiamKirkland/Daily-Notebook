@@ -30,13 +30,13 @@ class createAssignment: UIViewController,UINavigationControllerDelegate,UIImageP
         
         present(imagePick, animated: true, completion: nil)
     }
-    @IBAction func takeImage(_ sender: UIButton) {
-        
-        imagePick.allowsEditing = false
-        imagePick.sourceType = .camera
-        
-        present(imagePick, animated: true, completion: nil)
-    }
+//    @IBAction func takeImage(_ sender: UIButton) {
+//
+//        imagePick.allowsEditing = false
+//        imagePick.sourceType = .camera
+//
+//        present(imagePick, animated: true, completion: nil)
+//    }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         

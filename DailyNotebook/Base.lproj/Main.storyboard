@@ -96,22 +96,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LNw-bC-Gpd">
-                                <rect key="frame" x="211" y="538" width="87" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="From Library"/>
-                                <connections>
-                                    <action selector="loadImage:" destination="7ZG-mq-xAd" eventType="touchUpInside" id="Mai-Ex-K80"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wrS-Aw-oYe">
-                                <rect key="frame" x="85" y="538" width="76" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Take Photo"/>
-                                <connections>
-                                    <action selector="takeImage:" destination="7ZG-mq-xAd" eventType="touchUpInside" id="kQA-DQ-Rgs"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ORa-Cm-NXC">
                                 <rect key="frame" x="67" y="414" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -123,6 +107,14 @@
                                 <state key="normal" title="Create Assignment"/>
                                 <connections>
                                     <action selector="createAssignment:" destination="7ZG-mq-xAd" eventType="touchUpInside" id="jeJ-bE-pEu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LNw-bC-Gpd">
+                                <rect key="frame" x="133" y="538" width="110" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Select an Image"/>
+                                <connections>
+                                    <action selector="loadImage:" destination="7ZG-mq-xAd" eventType="touchUpInside" id="Mai-Ex-K80"/>
                                 </connections>
                             </button>
                         </subviews>

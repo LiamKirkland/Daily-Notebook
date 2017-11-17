@@ -89,6 +89,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
             eventNames.remove(at: indexPath.row)
             eventTimes.remove(at: indexPath.row)
             eventNotes.remove(at: indexPath.row)
+            imageArray.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
