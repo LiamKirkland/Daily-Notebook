@@ -15,6 +15,7 @@ class NotesVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
 
         customImage.image = imageArray[selectedCell]
         notes.text = eventNotes[selectedCell]
