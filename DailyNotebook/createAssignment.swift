@@ -51,7 +51,7 @@ class createAssignment: UIViewController,UINavigationControllerDelegate,UIImageP
             
             present(imagePick, animated: true, completion: nil)
         }else{
-            let alert = UIAlertController(title: "No Camera", message: "The camera on your phone either doesn't exist or is note available, please use photo library.", preferredStyle: UIAlertControllerStyle.alert)
+            let alert = UIAlertController(title: "No Camera", message: "The camera on your phone either doesn't exist or is not available, please use photo library.", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Confirm", style: UIAlertActionStyle.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
