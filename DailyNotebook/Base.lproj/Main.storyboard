@@ -117,6 +117,14 @@
                                     <action selector="loadImage:" destination="7ZG-mq-xAd" eventType="touchUpInside" id="Mai-Ex-K80"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DiT-VL-rKy">
+                                <rect key="frame" x="160" y="561" width="54" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Camera"/>
+                                <connections>
+                                    <action selector="takeImage:" destination="7ZG-mq-xAd" eventType="touchUpInside" id="QeE-Ts-Sco"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.9824945330619812" green="0.50816088914871216" blue="0.011913010850548744" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="ZoP-OX-Lgq"/>

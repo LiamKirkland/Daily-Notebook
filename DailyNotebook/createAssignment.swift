@@ -30,13 +30,20 @@ class createAssignment: UIViewController,UINavigationControllerDelegate,UIImageP
         
         present(imagePick, animated: true, completion: nil)
     }
-//    @IBAction func takeImage(_ sender: UIButton) {
-//
-//        imagePick.allowsEditing = false
-//        imagePick.sourceType = .camera
-//
-//        present(imagePick, animated: true, completion: nil)
-//    }
+    @IBAction func takeImage(_ sender: UIButton) {
+        
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            imagePick.allowsEditing = false
+            imagePick.sourceType = .camera
+            
+            present(imagePick, animated: true, completion: nil)
+        }else{
+            let alert = UIAlertController(title: "No Camera", message: "The camera on your phone either doesn't exist or is note available, please use photo library.", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Confirm", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+        
+    }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
