@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NotesVC: UIViewController {
+class NotesVC: UIViewController,UITextViewDelegate {
     
     @IBOutlet weak var notes: UITextView!
     @IBOutlet weak var customImage: UIImageView!
@@ -17,10 +17,25 @@ class NotesVC: UIViewController {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
 
+        notes.delegate = self
         customImage.image = imageArray[selectedCell]
         notes.text = eventNotes[selectedCell]
     }
     //make save button actually save.
+    
+    func textView(_ notes: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if(text == "\n") {
+            notes.resignFirstResponder()
+            return false
+        }
+        return true
+    }
+    
+    func textViewDidBeginEditing(_ notes: UITextView) {
+        DispatchQueue.main.async {
+            notes.selectAll(nil)
+        }
+    }
     
     @IBAction func saveChanges(_ sender: Any) {
         eventNotes[selectedCell] = notes.text

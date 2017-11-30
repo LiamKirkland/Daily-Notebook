@@ -20,7 +20,7 @@ extension UIViewController {
     }
 }
 
-class createAssignment: UIViewController,UINavigationControllerDelegate,UIImagePickerControllerDelegate {
+class createAssignment: UIViewController,UINavigationControllerDelegate,UIImagePickerControllerDelegate,UITextFieldDelegate,UITextViewDelegate {
     
     @IBOutlet weak var eventTitle: UITextField!
     @IBOutlet weak var eventNote: UITextView!
@@ -33,7 +33,30 @@ class createAssignment: UIViewController,UINavigationControllerDelegate,UIImageP
         super.viewDidLoad()
 
         self.hideKeyboardWhenTappedAround()
+        eventTitle.delegate = self
+        eventNote.delegate = self
         imagePick.delegate = self
+        
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        eventTitle.resignFirstResponder()
+        //eventNote.resignFirstResponder()
+        return true
+    }
+    func textView(_ eventNote: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if(text == "\n") {
+            eventNote.resignFirstResponder()
+            return false
+        }
+        return true
+    }
+    
+    func textViewDidBeginEditing(_ eventNote: UITextView) {
+        DispatchQueue.main.async {
+            eventNote.selectAll(nil)
+        }
     }
     
     @IBAction func loadImage(_ sender: UIButton) {
