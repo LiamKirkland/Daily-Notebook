@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 extension UIViewController {
     func hideKeyboardWhenTappedAround() {
@@ -28,6 +29,8 @@ class createAssignment: UIViewController,UINavigationControllerDelegate,UIImageP
     @IBOutlet weak var imagePicker: UIImageView!
     
     let imagePick = UIImagePickerController()
+    var pickedImg: UIImage = #imageLiteral(resourceName: "blank")
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,6 +90,7 @@ class createAssignment: UIViewController,UINavigationControllerDelegate,UIImageP
             imagePicker.contentMode = .scaleAspectFit
             imagePicker.image = pickedImage
             imageArray.append(pickedImage)
+            pickedImg = pickedImage
         }
         
         dismiss(animated: true, completion: nil)
@@ -116,8 +120,17 @@ class createAssignment: UIViewController,UINavigationControllerDelegate,UIImageP
             eventNotes.append(eventNote.text!)
             eventTimes.append(formatter.string(from: currentDateTime))
             if imagePicker.image == nil {
-                imageArray.append(#imageLiteral(resourceName: "blank"))
+                
             }
+            
+            let event = Event(context: PersistenceService.context)
+            let eventImg = UIImagePNGRepresentation(pickedImg) as NSData?
+            event.title = eventTitle.text
+            event.notes = eventNote.text
+            event.date = formatter.string(from: currentDateTime)
+            event.image = eventImg
+            PersistenceService.saveContext()
+            events.append(event)
             
             let alert = UIAlertController(title: "Event Created", message: "Add another or tap Back.", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Confirm", style: UIAlertActionStyle.default, handler: nil))

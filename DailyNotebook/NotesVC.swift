@@ -16,10 +16,16 @@ class NotesVC: UIViewController,UITextViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
-
+        
+        if events[selectedCell].image == nil{
+            
+        }else{
+        
+        let imagePt = UIImage(data: (events[selectedCell].image as! NSData) as Data)
+        customImage.image = imagePt 
+        notes.text = events[selectedCell].notes
         notes.delegate = self
-        customImage.image = imageArray[selectedCell]
-        notes.text = eventNotes[selectedCell]
+        }
     }
     //make save button actually save.
     
@@ -38,7 +44,12 @@ class NotesVC: UIViewController,UITextViewDelegate {
     }
     
     @IBAction func saveChanges(_ sender: Any) {
-        eventNotes[selectedCell] = notes.text
+        events[selectedCell].notes = notes.text
+        PersistenceService.saveContext()
+        
+        let alert = UIAlertController(title: "Notes Saved", message: "Your notes have been successfully saved.", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Confirm", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
     

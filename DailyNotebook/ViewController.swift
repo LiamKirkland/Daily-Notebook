@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 var image = #imageLiteral(resourceName: "example")
 
@@ -14,6 +15,8 @@ var eventNames: Array = ["Example Event"]
 var eventTimes: Array = ["Jan 1, 2017 at 12:00 AM"]
 var eventNotes: Array = ["These are your notes."]
 var imageArray: Array = [image]
+
+var events: Array = [Event]()
 
 var selectedCell: Int = 0
 
@@ -39,13 +42,50 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     @IBOutlet weak var eventLog: UITableView!
     
+    let event = Event(context: PersistenceService.context)
     
+    let eventImg = UIImagePNGRepresentation(image) as NSData?
+//    event.title = "Example Event"
+//    event.notes = "These are your notes"
+//    event.date = "Jan 1, 2017 at 12:00 AM"
+//    event.image = eventImg
+//    PersistenceService.saveContext()
+//    events.append(event)
+//
     override func viewDidLoad() {
         super.viewDidLoad()
-        let newAssignment = Assignment(title: "Hello", notes: "blahblahblah", Date: "Now")
+        //let newAssignment = Assignment(title: "Hello", notes: "blahblahblah", Date: "Now")
         
+        
+        let fetchRequest: NSFetchRequest<Event> = Event.fetchRequest()
+        
+        do{
+            let eventList = try PersistenceService.context.fetch(fetchRequest)
+            
+            
+            events = eventList
+            
+            for event in events {
+                if event.title == nil {
+                    let myEventIndex = events.index(of: event)!
+                    events.remove(at: myEventIndex)
+                }
+            }
+            //self.eventLog.reloadData()
+        }catch{
+            
+        }
+            
         eventLog.delegate = self
         eventLog.dataSource = self
+        
+//        PersistenceService.context.delete(events[events.count - 1])
+//        do {
+//            try PersistenceService.context.save()
+//            eventLog.reloadData()
+//        } catch let error as NSError {
+//            print("Could not save. \(error), \(error.userInfo)")
+//        }
         
     }
     
@@ -59,20 +99,23 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return eventNames.count
+        print(events.count)
+        print (events)
+        
+        return events.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let myCell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
+//        var myCell = tableView.dequeueReusableCell(withIdentifier: "myCell")
+//        if (myCell == nil)
+//        {
+//            myCell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "myCell")
+//        }
+        myCell.textLabel?.text = events[indexPath.row].title
+        myCell.detailTextLabel?.text = events[indexPath.row].date
         
-        var myCell = tableView.dequeueReusableCell(withIdentifier: "myCell")
-        if (myCell == nil)
-        {
-            myCell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "myCell")
-        }
-        myCell?.textLabel?.text = eventNames[indexPath.row]
-        myCell?.detailTextLabel?.text = eventTimes[indexPath.row]
-        
-        return myCell!
+        return myCell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -84,22 +127,22 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete{
-            print(indexPath.row)
-            eventNames.remove(at: indexPath.row)
-            eventTimes.remove(at: indexPath.row)
-            eventNotes.remove(at: indexPath.row)
-            imageArray.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
+        
+        if editingStyle == .delete {
+            PersistenceService.context.delete(events[indexPath.row])
+            events.remove(at: indexPath.row)
+            eventLog.deleteRows(at: [indexPath], with: .fade)
+            do {
+                try PersistenceService.context.save()
+                eventLog.reloadData()
+            } catch let error as NSError {
+                print("Could not save. \(error), \(error.userInfo)")
+            }
         }
     }
     
     
 }
 
-struct Assignment {
-    var title: String
-    var notes: String
-    var Date: String
-}
+
 

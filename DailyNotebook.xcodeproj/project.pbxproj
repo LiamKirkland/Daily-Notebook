@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E803A1231FD5816A00620627 /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E803A1221FD5816A00620627 /* PersistenceService.swift */; };
+		E803A1261FD584C700620627 /* Event+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E803A1241FD584C700620627 /* Event+CoreDataClass.swift */; };
+		E803A1271FD584C700620627 /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E803A1251FD584C700620627 /* Event+CoreDataProperties.swift */; };
 		E88666CD1FB33DBE00EA9097 /* createAssignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88666CC1FB33DBE00EA9097 /* createAssignment.swift */; };
-		E88666CF1FB33F7700EA9097 /* assignmentCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88666CE1FB33F7700EA9097 /* assignmentCreate.swift */; };
 		E8ACDDD51FB48EB300A5FBD8 /* NotesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8ACDDD41FB48EB300A5FBD8 /* NotesVC.swift */; };
 		E8FEE51A1FB0937A0054BB87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FEE5191FB0937A0054BB87 /* AppDelegate.swift */; };
 		E8FEE51C1FB0937A0054BB87 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FEE51B1FB0937A0054BB87 /* ViewController.swift */; };
@@ -38,8 +40,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E803A1221FD5816A00620627 /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
+		E803A1241FD584C700620627 /* Event+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Event+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E803A1251FD584C700620627 /* Event+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Event+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E88666CC1FB33DBE00EA9097 /* createAssignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createAssignment.swift; sourceTree = "<group>"; };
-		E88666CE1FB33F7700EA9097 /* assignmentCreate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = assignmentCreate.swift; sourceTree = "<group>"; };
 		E8ACDDD41FB48EB300A5FBD8 /* NotesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesVC.swift; sourceTree = "<group>"; };
 		E8FEE5161FB0937A0054BB87 /* DailyNotebook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyNotebook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8FEE5191FB0937A0054BB87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -105,10 +109,12 @@
 		E8FEE5181FB0937A0054BB87 /* DailyNotebook */ = {
 			isa = PBXGroup;
 			children = (
+				E803A1241FD584C700620627 /* Event+CoreDataClass.swift */,
+				E803A1251FD584C700620627 /* Event+CoreDataProperties.swift */,
 				E8FEE5191FB0937A0054BB87 /* AppDelegate.swift */,
 				E8FEE51B1FB0937A0054BB87 /* ViewController.swift */,
+				E803A1221FD5816A00620627 /* PersistenceService.swift */,
 				E88666CC1FB33DBE00EA9097 /* createAssignment.swift */,
-				E88666CE1FB33F7700EA9097 /* assignmentCreate.swift */,
 				E8ACDDD41FB48EB300A5FBD8 /* NotesVC.swift */,
 				E8FEE51D1FB0937B0054BB87 /* Main.storyboard */,
 				E8FEE5231FB0937B0054BB87 /* Assets.xcassets */,
@@ -271,10 +277,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E803A1271FD584C700620627 /* Event+CoreDataProperties.swift in Sources */,
+				E803A1231FD5816A00620627 /* PersistenceService.swift in Sources */,
 				E8FEE51C1FB0937A0054BB87 /* ViewController.swift in Sources */,
+				E803A1261FD584C700620627 /* Event+CoreDataClass.swift in Sources */,
 				E8FEE5221FB0937B0054BB87 /* DailyNotebook.xcdatamodeld in Sources */,
 				E88666CD1FB33DBE00EA9097 /* createAssignment.swift in Sources */,
-				E88666CF1FB33F7700EA9097 /* assignmentCreate.swift in Sources */,
 				E8ACDDD51FB48EB300A5FBD8 /* NotesVC.swift in Sources */,
 				E8FEE51A1FB0937A0054BB87 /* AppDelegate.swift in Sources */,
 			);
